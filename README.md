@@ -1,4 +1,4 @@
-# 🔐 Secure Vault Enterprise
+# 🔐 Password Manager
 
 <p align="center">
   <b>Enterprise-Grade Password Manager built with Electron & Node.js</b>
@@ -61,13 +61,18 @@ It is suitable for:
 ## ✨ Key Features
 
 ✔ AES-256-GCM encrypted vault storage
+
 ✔ Argon2id master password protection
+
 ✔ Brute-force attack lockout system
+
 ✔ Automatic vault locking after inactivity
+
 ✔ Clipboard auto-clear protection
+
 ✔ Real-time password strength evaluation
+
 ✔ Fully local encrypted storage (`vault.enc`)
-✔ No cloud dependency
 
 ---
 
