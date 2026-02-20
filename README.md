@@ -43,3 +43,51 @@ secure-password-manager/
 ├── styles.css          # Styling
 ├── package.json        # Dependencies
 └── vault.enc           # Encrypted Database
+
+
+## ⚡ Installation & Setup
+
+1. **Clone the repository:**
+   ```bash
+   git clone [https://github.com/nisaiqbal000/Password_Manager.git](https://github.com/nisaiqbal000/Password_Manager.git)
+   cd Password_Manager
+Install dependencies:
+
+Bash
+npm install
+Run the application:
+
+Bash
+npm start
+🔐 Security Standards
+Key Derivation: Argon2id
+
+Encryption Algorithm: AES-256-GCM
+
+Security Layers: - Brute-force protection
+
+Inactivity locks
+
+Secure Memory handling
+
+📦 Dependencies
+Electron: Desktop framework for cross-platform apps.
+
+Argon2: Advanced password hashing for key derivation.
+
+Node.js Crypto: Built-in cryptographic functions for encryption/decryption.
+
+📝 License
+MIT License © 2026 Nisa Iqbal
+
+
+---
+
+### **GitHub par update karne ke liye ye commands chalayein:**
+Agar aapne file save kar li hai, to terminal mein ye likhein:
+
+```bash
+git add README.md
+git commit -m "Finalized README formatting"
+git push origin main
+
