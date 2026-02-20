@@ -1,0 +1,219 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background: #0f172a;
+  color: #f1f5f9;
+}
+
+/* Page Visibility */
+.page {
+  display: none;
+}
+
+.page.active {
+  display: block;
+}
+
+/* Layout */
+.app {
+  display: flex;
+  height: 100vh;
+}
+
+/* ================= Sidebar ================= */
+
+.sidebar {
+  width: 250px;
+  background: #1e293b;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar li {
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.sidebar li:hover {
+  background: #334155;
+}
+
+.sidebar li.active {
+  background: #2563eb;
+}
+
+.sidebar-footer {
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+/* ================= Main ================= */
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Topbar */
+.topbar {
+  background: #1e293b;
+  padding: 15px 30px;
+}
+
+/* ================= Content ================= */
+
+.content {
+  padding: 30px;
+  overflow-y: auto;
+}
+
+/* ================= Cards ================= */
+
+.card {
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+}
+
+/* ================= Inputs ================= */
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  border: 1px solid #334155;
+  background: #0f172a;
+  color: #f1f5f9;
+  outline: none;
+  transition: 0.2s;
+}
+
+input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.3);
+}
+
+/* ================= Buttons ================= */
+
+button {
+  padding: 8px 14px;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  border: none;
+  background: #2563eb;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: #1d4ed8;
+}
+
+/* ================= Table ================= */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+}
+
+th {
+  background: #334155;
+}
+
+tr:nth-child(even) {
+  background: #273449;
+}
+
+/* Delete button inside table */
+table button {
+  background: #ef4444;
+}
+
+table button:hover {
+  background: #dc2626;
+}
+/* ================= Settings Page ================= */
+
+.setting-item {
+  margin-bottom: 20px;
+}
+
+.setting-item h4 {
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #f1f5f9;
+}
+
+/* Select Dropdowns */
+select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #334155;
+  background: #0f172a;
+  color: #f1f5f9;
+  outline: none;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+select:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.3);
+}
+
+/* Danger Button */
+button.danger {
+  background: #ef4444;
+  color: #fff;
+}
+
+button.danger:hover {
+  background: #dc2626;
+}
+
+/* Settings card enhancements */
+.card hr {
+  border: 0;
+  height: 1px;
+  background: #334155;
+  margin: 20px 0;
+}
+
+/* Inputs inside settings */
+.setting-item input {
+  margin-bottom: 10px;
+}

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>SecureVault Enterprise</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+<div class="app">
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="logo">🔐 SecureVault</div>
+
+    <nav>
+      <ul>
+        <li onclick="navigate('dashboardPage')">Dashboard</li>
+        <li onclick="navigate('vaultPage')">Vault</li>
+        <li onclick="navigate('settingsPage')">Settings</li>
+      </ul>
+    </nav>
+
+    <div class="sidebar-footer">
+      <small>Enterprise Edition v1.0</small>
+    </div>
+  </aside>
+
+  <!-- Main -->
+  <div class="main">
+
+    <header class="topbar">
+      <h2>SecureVault Dashboard</h2>
+    </header>
+
+    <section class="content">
+
+      <!-- ================= DASHBOARD ================= -->
+      <div id="dashboardPage" class="page active">
+        <div class="card">
+
+          <h3>Vault Access</h3>
+
+          <input type="password" id="masterPassword" placeholder="Enter Master Password" />
+          <button onclick="unlockVault()">Unlock</button>
+          <button onclick="resetMasterPassword()">Reset Master Password</button>
+
+          <p style="margin-top:20px;">
+            Total Stored Passwords:
+            <strong><span id="totalCount">0</span></strong>
+          </p>
+
+        </div>
+      </div>
+
+      <!-- ================= VAULT ================= -->
+      <div id="vaultPage" class="page">
+        <div class="card">
+
+          <h3>Add New Entry</h3>
+
+          <input type="text" id="websiteInput" placeholder="Website" />
+          <input type="text" id="usernameInput" placeholder="Username" />
+          <input type="password" id="passwordInput" placeholder="Password" />
+
+          <button onclick="generatePassword()">Generate Password</button>
+          <button onclick="addEntry()">Save Entry</button>
+
+          <p><strong>Generated:</strong> <span id="generatedPassword"></span></p>
+
+          <hr style="margin:20px 0;">
+
+          <input type="text" id="searchInput" placeholder="Search..." oninput="searchVault()" />
+
+          <table border="1" width="100%" style="margin-top:15px;">
+            <thead>
+              <tr>
+                <th>Website</th>
+                <th>Username</th>
+                <th>Password</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="vaultTable"></tbody>
+          </table>
+
+        </div>
+      </div>
+
+     <!-- ================= SETTINGS ================= -->
+<div id="settingsPage" class="page">
+  <div class="card">
+    <h3>Settings</h3>
+
+    <!-- Change Master Password -->
+    <div class="setting-item">
+      <h4>Change Master Password</h4>
+      <input type="password" id="oldPassword" placeholder="Current Password" />
+      <input type="password" id="newPassword" placeholder="New Password" />
+      <button onclick="changeMasterPassword()">Update Password</button>
+    </div>
+
+    <hr>
+
+    <!-- Theme Selection -->
+    <div class="setting-item">
+      <h4>Theme</h4>
+      <select id="themeSelect" onchange="changeTheme()">
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+      </select>
+    </div>
+
+    <hr>
+
+    <!-- Vault Backup -->
+    <div class="setting-item">
+      <h4>Vault Backup</h4>
+      <button onclick="exportVault()">Export Vault Data</button>
+      <button onclick="importVault()">Import Vault Data</button>
+    </div>
+
+    <hr>
+
+    <!-- Auto-lock Timeout -->
+    <div class="setting-item">
+      <h4>Auto-lock Vault</h4>
+      <select id="autoLockSelect" onchange="setAutoLock()">
+        <option value="1">1 min</option>
+        <option value="5">5 mins</option>
+        <option value="15">15 mins</option>
+        <option value="30">30 mins</option>
+      </select>
+    </div>
+
+    <hr>
+
+    <!-- Clear Vault -->
+    <div class="setting-item">
+      <h4>Danger Zone</h4>
+      <button onclick="clearVault()" style="background-color:red; color:white;">
+        Clear All Vault Data
+      </button>
+    </div>
+
+  </div>
+</div>
+
+    </section>
+  </div>
+
+</div>
+
+<script src="renderer.js"></script>
+
+</body>
+</html>
