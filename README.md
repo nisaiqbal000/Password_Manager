@@ -1,93 +1,203 @@
-# Secure Vault Enterprise 🔐
+Got it 👍 — you’re right. The formatting broke because of those extra `id=""` attributes inside code blocks. GitHub README **does NOT support that**, so it ruins the markdown.
 
-[![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
-[![Node.js](https://img.shields.io/badge/node-%3E%3D16-brightgreen)](https://nodejs.org/)
-[![Electron](https://img.shields.io/badge/electron-v30.0.0-blue)](https://www.electronjs.org/)
-
-## 📝 Overview
-
-**Secure Vault Enterprise** is an enterprise-level password manager built with **Electron**. It provides a robust and secure environment for managing sensitive credentials using industry-standard security protocols. 
-
-It features **AES-256-GCM encryption**, **Argon2id key derivation**, and **secure IPC** communication, making it suitable for both personal and professional use.
+Here is a **clean, properly formatted GitHub-ready README.md** — no extra attributes, no broken formatting. Just copy and paste directly.
 
 ---
 
-## 🏢 Key Features
+# 🔐 Secure Vault Enterprise
 
-- **Advanced Encryption:** Uses AES-256-GCM for all stored data.
-- **Modern Hashing:** Argon2id key derivation for high-level master password security.
-- **Sandboxed Environment:** Context isolation & no Node.js access in the renderer for maximum safety.
-- **Brute-Force Protection:** Built-in lockout system to prevent unauthorized access.
-- **Auto-Lock:** Automatically locks the vault after periods of inactivity.
-- **Privacy First:** Clipboard auto-clear and password strength evaluation.
-- **Local Storage:** Vault is encrypted and stored locally in `vault.enc`.
+### Enterprise-Grade Password Manager (Electron + Node.js)
+
+Secure Vault Enterprise is a high-security desktop password manager built with **Electron** and **Node.js**, designed to protect sensitive credentials using industry-standard cryptography and enterprise-level security architecture.
+
+It combines **AES-256-GCM encryption**, **Argon2id key derivation**, and secure IPC communication to ensure maximum data protection — suitable for both professional and professional use.
+
+---
+
+## 🏢 Overview
+
+Secure Vault Enterprise provides a secure, sandboxed environment for storing and managing credentials locally. All sensitive data is encrypted before being written to disk, ensuring zero plain-text storage.
+
+The application follows modern security best practices including:
+
+* Context Isolation enabled
+* Node Integration disabled
+* Secure IPC bridge (preload.js)
+* Restricted renderer environment
+* Memory-safe cryptographic handling
+
+---
+
+## 🚀 Key Features
+
+### 🔒 Advanced Encryption
+
+All stored data is encrypted using **AES-256-GCM**, providing authenticated encryption with integrity verification.
+
+### 🛡 Modern Key Derivation
+
+Implements **Argon2id**, a memory-hard hashing algorithm resistant to brute-force and GPU attacks.
+
+### 🧱 Sandboxed Architecture
+
+* Context Isolation enabled
+* Node.js access disabled in renderer
+* Secure preload bridge
+* Hardened IPC communication
+
+### 🚫 Brute-Force Protection
+
+Built-in lockout system prevents repeated unauthorized access attempts.
+
+### ⏳ Auto-Lock System
+
+Automatically locks the vault after a period of inactivity.
+
+### 🧹 Privacy-First Features
+
+* Clipboard auto-clear after copying passwords
+* Real-time password strength evaluation
+
+### 💾 Local Encrypted Storage
+
+All credentials are encrypted and stored locally in:
+
+```
+vault.enc
+```
+
+No cloud storage. No external servers. 100% local security.
 
 ---
 
 ## 🏗 Project Structure
 
-```text
+```
 secure-password-manager/
 │
-├── main.js             # Main process
-├── preload.js          # Secure bridge (IPC)
-├── crypto/             # Encryption & Key logic
+├── main.js              # Electron main process
+├── preload.js           # Secure IPC bridge
+│
+├── crypto/              # Cryptography logic
 │   ├── encryption.js
 │   └── keyDerivation.js
-├── security/           # Safety measures
+│
+├── security/            # Security mechanisms
 │   └── bruteForce.js
-├── renderer/           # UI Logic
+│
+├── renderer/            # Frontend logic
 │   ├── ui.js
 │   └── strength.js
-├── index.html          # Main UI
-├── styles.css          # Styling
-├── package.json        # Dependencies
-└── vault.enc           # Encrypted Database
-
-
-## ⚡ Installation & Setup
-
-1. **Clone the repository:**
-   ```bash
-   git clone [https://github.com/nisaiqbal000/Password_Manager.git](https://github.com/nisaiqbal000/Password_Manager.git)
-   cd Password_Manager
-Install dependencies:
-
-Bash
-npm install
-Run the application:
-
-Bash
-npm start
-🔐 Security Standards
-Key Derivation: Argon2id
-
-Encryption Algorithm: AES-256-GCM
-
-Security Layers: - Brute-force protection
-
-Inactivity locks
-
-Secure Memory handling
-
-📦 Dependencies
-Electron: Desktop framework for cross-platform apps.
-
-Argon2: Advanced password hashing for key derivation.
-
-Node.js Crypto: Built-in cryptographic functions for encryption/decryption.
-
-📝 License
-MIT License © 2026 Nisa Iqbal
-
+│
+├── index.html           # Application UI
+├── styles.css           # Styling
+├── package.json         # Dependencies
+└── vault.enc            # Encrypted vault database
+```
 
 ---
 
-### **GitHub par update karne ke liye ye commands chalayein:**
-Agar aapne file save kar li hai, to terminal mein ye likhein:
+## ⚡ Installation & Setup
+
+### 1️⃣ Clone the Repository
 
 ```bash
-git add README.md
-git commit -m "Finalized README formatting"
-git push origin main
+git clone https://github.com/nisaiqbal000/Password_Manager.git
+cd Password_Manager
+```
 
+### 2️⃣ Install Dependencies
+
+```bash
+npm install
+```
+
+### 3️⃣ Run the Application
+
+```bash
+npm start
+```
+
+---
+
+## 🔐 Security Standards
+
+| Security Layer         | Technology Used                    |
+| ---------------------- | ---------------------------------- |
+| Key Derivation         | Argon2id                           |
+| Encryption             | AES-256-GCM                        |
+| Storage                | Encrypted Local File (`vault.enc`) |
+| Brute-Force Protection | Lockout Mechanism                  |
+| Inactivity Protection  | Auto-Lock                          |
+| Memory Handling        | Secure Memory Practices            |
+
+---
+
+## 🧪 Cryptographic Details
+
+### 🔑 Key Derivation
+
+* Algorithm: **Argon2id**
+* Memory-hard & GPU-resistant
+* Protects master password against brute-force attacks
+
+### 🔐 Encryption
+
+* Algorithm: **AES-256-GCM**
+* Provides:
+
+  * Confidentiality
+  * Integrity
+  * Authentication
+
+---
+
+## 📦 Dependencies
+
+* **Electron** – Cross-platform desktop framework
+* **Argon2** – Secure password hashing
+* **Node.js Crypto** – Native cryptographic module
+
+---
+
+## 🎯 Use Cases
+
+* Enterprise credential management
+* Local secure password storage
+* Developer secure vault solution
+* Security-focused desktop applications
+
+---
+
+## 👩‍💻 Author
+
+**Nisa Iqbal**
+Cybersecurity & Software Development Enthusiast
+
+GitHub: [https://github.com/nisaiqbal000](https://github.com/nisaiqbal000)
+
+---
+
+## 📜 License
+
+MIT License © 2026 Nisa Iqbal
+
+This project is licensed under the MIT License — feel free to use, modify, and distribute responsibly.
+
+---
+
+## ⭐ Support
+
+If you find this project helpful:
+
+* ⭐ Star the repository
+* 🛠 Contribute improvements
+* 🔐 Promote secure development practices
+
+---
+
+**Secure. Private. Enterprise-Ready.** 🔐
+
+---
+
+If you want, I can now make a **more premium GitHub-style README** (with badges, shields, professional layout, and better visual hierarchy).
